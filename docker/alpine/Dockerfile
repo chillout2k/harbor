@@ -5,8 +5,7 @@ RUN apk update && apk upgrade && \
  apk add python3 && \
  pip3 install flask-restful requests && \
  mkdir /harbor
-ADD ./*.py /harbor/
 
-# compose: ./harbor.py --config /config/harbor_config.json
+COPY app/*.py /harbor/
+
 CMD ["/harbor/harbor.py", "--config", "/config/harbor_config.json"]
-
