@@ -1,0 +1,56 @@
+{
+  "daemon":{
+    "listen_host": "this.local",
+    "listen_port": 5001
+  },
+  "trusted_proxies": {
+    "rprx01":[
+      "172.16.100.5", "fd00:100::5"
+    ],
+    "rprx02":[
+      "172.16.100.6", "fd00:100::6"
+    ]
+  },
+  "api_keys": {
+    "HIGHLY_SECURE_API_KEY": {
+      "user": "HARBOR APP"
+    }
+  },
+  "uri_prefixes": {
+    "hosts": "https://<fqdn>/api/v1/hosts"
+  },
+  "db_file": "/dev/shm/harbordb.json",
+  "hosts": [
+    { 
+      "type": "lxc",
+      "scheme": "http",
+      "host": "lxc1.example.local",
+      "port": 5000
+    },
+    { 
+      "type": "lxc",
+      "scheme": "http",
+      "host": "lxc2.example.local",
+      "port": 5000
+    },
+    { 
+      "type": "lxd",
+      "scheme": "https",
+      "host": "lxd1.example.local",
+      "port": 8443,
+      "ccert": "client.crt",
+      "ckey": "client.key"
+    },
+    { 
+      "type": "lxd",
+      "scheme": "https",
+      "host": "lxd2.example.local",
+      "port": 8443,
+      "ccert": "client.crt",
+      "ckey": "client.key"
+    } 
+  ],
+  "db_updater": {
+    "update_interval": 60
+  }
+}
