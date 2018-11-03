@@ -1,0 +1,19 @@
+version: "3"
+
+networks:
+  harbordmz:
+    subnet: <Network in CIDR notation>
+    gateway: <gateway-ip-address>
+
+services:
+  harbor-zdf03:
+    image: harbor/alpine:devel
+    container_name: harbor-zdf03
+    hostname: harbor-zdf03.zwackl.local
+    restart: "unless-stopped"
+    networks: 
+      harbordmz:
+        ipv4_address: <IPv4-address>
+    volumes:
+    - ./config/:/config/:ro
+
