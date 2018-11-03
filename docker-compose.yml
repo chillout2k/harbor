@@ -6,10 +6,10 @@ networks:
     gateway: <gateway-ip-address>
 
 services:
-  harbor-zdf03:
+  harbor:
     image: harbor/alpine:devel
-    container_name: harbor-zdf03
-    hostname: harbor-zdf03.zwackl.local
+    container_name: harbor
+    hostname: harbor.example.local
     restart: "unless-stopped"
     networks: 
       harbordmz:
